@@ -1,0 +1,61 @@
+{
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@line/bot-sdk": "^7.3.0",
+    "admin-lte": "^3.1.0",
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "cron": "^1.8.2",
+    "dateformat": "^4.5.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-flash": "^0.0.2",
+    "express-jwt": "^6.0.0",
+    "express-session": "^1.17.2",
+    "helmet": "^4.6.0",
+    "http": "^0.0.1-security",
+    "http-errors": "^1.8.0",
+    "jquery": "^3.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "line-api": "^0.2.1",
+    "line-notify-nodejs": "^1.0.0",
+    "log4js": "^6.3.0",
+    "md5": "^2.3.0",
+    "messaging-api-line": "^1.0.4",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "node-cron": "^3.0.0",
+    "node-schedule": "^2.0.0",
+    "nodemailer": "^6.6.1",
+    "nodemon": "^2.0.7",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "pdf-creator-node": "^2.2.2",
+    "request": "^2.88.2",
+    "sequelize": "^6.6.2",
+    "serve-favicon": "^2.5.0",
+    "socket.io": "^4.1.2"
+  },
+  "devDependencies": {
+    "jest": "^27.0.3"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "name": "luckywheel",
+  "description": "LuckyWheel",
+  "version": "1.0.0",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "author": "Mr. Thanit Netprokaew",
+  "license": "ISC"
+}

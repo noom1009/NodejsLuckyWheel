@@ -1,0 +1,26 @@
+
+.popup-controls {
+}
+
+.popup-close {
+  float: right;
+  padding: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popup-submit {
+  float: right;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 6px;
+  margin-right: 12px;
+}
+
+.popup-content {
+  padding: 2px;
+  height: auto;
+  margin: 10px;
+  width: 90%;
+}
+</style>
