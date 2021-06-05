@@ -9,6 +9,7 @@ const env = require("../config/env");
 const icopenhRouter = require('./icopenh/index');
 const salesRouter = require('./sales/index');
 const luckyRouter = require('./luckyWheel/index');
+const loginRouter = require('./login/index')
 
 router.get("/", (req, res) => {
     res.render(configVariable.homePage, {
@@ -22,5 +23,6 @@ router.get("/", (req, res) => {
 router.use('/sales', salesRouter)
 router.use('/icopenh',icopenhRouter)
 router.use('/luckywheel',luckyRouter)
+router.use('/login', loginRouter)
 
 module.exports = router;

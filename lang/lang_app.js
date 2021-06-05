@@ -25,7 +25,9 @@ const lang_app = {
     deleteDataError:'Delete Database Error',
     emptyData: 'กรุณากรอกข้อมูลส่งมาด้วย',
     userNotLogin: "ไม่พบข้อมูลของท่าน",
-    userNotLucky: "ได้ทำการรับรางวัลไปแล้ว"
+    userNotLucky: "ได้ทำการรับรางวัลไปแล้ว",
+    messagesBoxForEmp: "",
+    messagesInputTextBox: "โปรดกรอกข้อมูล",
   };
   
   module.exports = lang_app;

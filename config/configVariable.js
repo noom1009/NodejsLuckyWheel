@@ -26,7 +26,7 @@ const configvariable = {
     rootPage: "/",
     forgot:"forgot/index",
     webPage: "webpage/index",
-    loginPage: "login",
+    loginPage: "login/index",
     dashboardPage: "dashboard",
     dashboardsPage: "/dashboard",
     companyPage: "company/index",
