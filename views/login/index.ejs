@@ -8,14 +8,14 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="style.css" />
-    <title>Sign in & Sign up Form</title>
+    <title><%= title %></title>
   </head>
   <body>
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
           <form action="/login/signin" method="POST" class="sign-in-form">
-            <h2 class="title">Sign in</h2>
+            <img src="../<%= logo %>" />
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="email" id="f_email"  name="f_email" placeholder="Email" />
@@ -42,7 +42,7 @@
             </div>
           </form>
           <form action="/login/signup" method="POST" class="sign-up-form">
-            <h2 class="title">Sign up</h2>
+            <img src="../<%= logo %>" />
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="text" id="f_username" name="f_username" placeholder="Username" />

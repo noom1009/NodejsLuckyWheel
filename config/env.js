@@ -10,7 +10,7 @@ const env = {
     logo_app: "irisgroup/logoiris.png",
     appTitle: "ICOPENH sukhumvit 76",
     secret: "@#SDfionli1818685*-+sfsf",
-    restfulAPI: "http://localhost:2000",
+    restfulAPI: "http://office.iris.co.th:1001",
     storageUpload: "C:/Server/nginx/html/microservice/luckywheel/public/uploads",
     mailSend: "hotmail",
     mailUsers: "info@iris.co.th", 
