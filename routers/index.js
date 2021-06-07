@@ -6,23 +6,33 @@ const log = require("../middleware/logger");
 const configVariable = require("../config/configVariable");
 const env = require("../config/env");
 
-const icopenhRouter = require('./icopenh/index');
-const salesRouter = require('./sales/index');
-const luckyRouter = require('./luckyWheel/index');
-const loginRouter = require('./login/index')
+const icopenhRouter = require("./icopenh/index");
+const salesRouter = require("./sales/index");
+const luckyRouter = require("./luckyWheel/index");
+const loginRouter = require("./login/index");
+const dashboardRouter = require("./dashboard/index");
 
 router.get("/", (req, res) => {
-    res.render(configVariable.homePage, {
-        title: env.appTitle,
-        logo: env.logo_app,
-        company_name: env.company_name,
-        messages: '',
-      });
+  res.render(configVariable.homePage, {
+    title: env.appTitle,
+    logo: env.logo_app,
+    company_name: env.company_name,
+    messages: "",
   });
+});
+router.post("/", (req, res) => {
+  res.render(configVariable.homePage, {
+    title: env.appTitle,
+    logo: env.logo_app,
+    company_name: env.company_name,
+    messages: "",
+  });
+});
 
-router.use('/sales', salesRouter)
-router.use('/icopenh',icopenhRouter)
-router.use('/luckywheel',luckyRouter)
-router.use('/login', loginRouter)
+router.use("/sales", salesRouter);
+router.use("/icopenh", icopenhRouter);
+router.use("/luckywheel", luckyRouter);
+router.use("/login", loginRouter);
+router.use("/dashboard", dashboardRouter);
 
 module.exports = router;
