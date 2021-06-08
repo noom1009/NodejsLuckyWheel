@@ -141,6 +141,8 @@ class IcopengModel {
         });
   }
 
+  static findAndCount()
+
 }
 
 module.exports = IcopengModel;

@@ -33,6 +33,10 @@ module.exports = (sequelize, Sequelize) => {
           type: Sequelize.INTEGER,
           field: "f_status",
         },
+        f_date:{
+          type: Sequelize.STRING,
+          field: "f_date",
+        }
       },
       {
         timestamps: false,

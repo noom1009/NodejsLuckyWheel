@@ -24,6 +24,7 @@ class awardWinnerModel {
     f_luckylabel = "",
     f_idcard = "",
     f_mobile = "",
+    f_date = "",
   }) {
     this.f_ipaddress = f_ipaddress;
     this.f_customer = f_customer;
@@ -31,13 +32,14 @@ class awardWinnerModel {
     this.f_luckylabel = f_luckylabel;
     this.f_mobile = f_mobile;
     this.f_running = f_running;
+    this.f_date = f_date;
   }
 
   static findAll() {
     return awardWinnerDB
       .findAll()
       .then((result) => {
-        //console.log(result);
+        console.log(result);
         return result;
       })
       .catch((err) => {

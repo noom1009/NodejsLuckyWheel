@@ -24,9 +24,11 @@ class luckyWheelModel {
         f_idcard = "",
         f_luckylabel = "",
         f_countlucky = "",
+        f_date = "",
         f_status = "",
       }) {
         this.f_ipaddress = f_ipaddress;
+        this.f_date = f_date;
         this.f_bookingcode = f_bookingcode;
         this.f_idcard = f_idcard;
         this.f_luckylabel = f_luckylabel;

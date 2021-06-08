@@ -1,5 +1,5 @@
 const lang_app = {
-    Tilte: "System",
+    Tilte: "Lucky Wheel",
     Tiltes: "system",
     langApprove: "อนุมัติ",
     langCancel: "ยกเลิก",

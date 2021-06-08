@@ -11,14 +11,9 @@ const crypto = require("crypto");
 const env = require("../../config/env");
 const configVariable = require("../../config/configVariable");
 const lang = require("../../lang/lang_app");
+const dashboardController = require('../../controllers/dashboardController');
 
-router.get("/", function (req, res, next) {
-  res.render(configVariable.dashboardPage, {
-    title: env.appTitle,
-    logo: env.logo_app,
-    company_name: env.company_name,
-    messages: lang.userNotLucky,
-  });
-});
+
+router.get("/", dashboardController.getLuckyWheelController , function (req, res, next) {});
 
 module.exports = router;

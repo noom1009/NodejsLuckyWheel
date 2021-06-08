@@ -191,6 +191,7 @@ exports.createController = async (req, res, next) => {
       f_luckylabel: req.body.winnerLabel,
       f_countlucky: '1',
       f_status: "1",
+      f_date: Date.now(),
     });
     newLucky
       .createData()
