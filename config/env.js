@@ -11,7 +11,7 @@ const env = {
     appTitle: "ICOPENH sukhumvit 76",
     secret: "@#SDfionli1818685*-+sfsf",
     restfulAPI: "http://office.iris.co.th:1001",
-    storageUpload: "C:/Server/nginx/html/microservice/luckywheel/public/uploads",
+    storageUpload: "D:/NodejsLuckyWheel/public/uploads",
     mailSend: "hotmail",
     mailUsers: "info@iris.co.th", 
     mailPassword: "#Killerhiway@1009", 
