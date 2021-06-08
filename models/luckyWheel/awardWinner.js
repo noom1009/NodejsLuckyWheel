@@ -62,6 +62,21 @@ class awardWinnerModel {
         console.log(err);
       });
   }
+  static findAndCount(){
+    return awardWinnerDB.count()
+    .then((result) => {
+      //console.log(result)
+      return result;
+    })
+    .catch((err) => {
+      log.logger("warring", "505" +  err.message || lang.readeDataError);
+      console.log(err);
+      res.json({
+        message: err.message || lang.readeDataError
+      });
+    });
+  }
+
 }
 
 module.exports = awardWinnerModel;

@@ -31,7 +31,7 @@ exports.registerController = async (req, res, next) => {
 exports.authController = async (req, res, next) => {
   //console.log(req.body);
   if (req.body.f_password == "" && req.body.f_email == "") {
-  //  console.log(req.body);
+    //  console.log(req.body);
     res.redirect("/");
   } else {
     // console.log(req.body);
@@ -41,7 +41,7 @@ exports.authController = async (req, res, next) => {
           email: req.body.f_email,
           password: req.body.f_password,
         };
-       // console.log(payload);
+        // console.log(payload);
         axios.post(env.restfulAPI + "/api/users", payload).then((response) => {
           if (response.data.messagesboxs == "Success") {
             req.session.f_acc_code = response.data.result.f_acc_code;
@@ -56,38 +56,47 @@ exports.authController = async (req, res, next) => {
             req.session.f_pic = response.data.result.f_pic;
             req.session.auth = response.data.auth;
             req.session.token = response.data.token;
-            luckyModel.findAll()
-              .then((results) => {
-                icoModel.findAll().then((result) => {
-                console.log(req.session.f_login_name);
-                res.render(configVariable.dashboardPage, {
-                  title: env.appTitle,
-                  titles: lang.Tilte,
-                  logo: env.logo_app,
-                  company_name: env.company_name,
-                  messages: lang.messagesboxs,
-                  luckyData: results,
-                  luckyData1: result,
-                  data: {
-                    name: response.data.result.f_name,
-                    lastname: response.data.result.f_lastname,
-                    f_company: response.data.result.f_company,
-                    f_department: response.data.result.f_department,
-                    f_position: response.data.result.f_position,
-                    f_accounttype: response.data.result.f_accounttype,
-                    f_company: response.data.result.f_company,
-                  },
-                });
-              })
-              })
-              .catch((err) => {
-                res.render(configVariable.homePage, {
-                  title: env.appTitle,
-                  logo: env.logo_app,
-                  company_name: env.company_name,
-                  messages: lang.userNotLucky,
+            icoModel.findAndCount().then((resultCustomer) => {
+              const countCustomer = resultCustomer;
+              luckyModel.findAndCount().then((resultLucky) => {
+                const countLucky = resultLucky;
+                luckyModel
+                .findAll()
+                .then((results) => {
+                  icoModel.findAll().then((result) => {
+                    console.log(req.session.f_login_name);
+                    res.render(configVariable.dashboardPage, {
+                      title: env.appTitle,
+                      titles: lang.Tilte,
+                      logo: env.logo_app,
+                      company_name: env.company_name,
+                      messages: lang.messagesboxs,
+                      luckyData: results,
+                      luckyData1: result,
+                      countCustomer: countCustomer,
+                      countLucky: countLucky,
+                      data: {
+                        name: response.data.result.f_name,
+                        lastname: response.data.result.f_lastname,
+                        f_company: response.data.result.f_company,
+                        f_department: response.data.result.f_department,
+                        f_position: response.data.result.f_position,
+                        f_accounttype: response.data.result.f_accounttype,
+                        f_company: response.data.result.f_company,
+                      },
+                    });
+                  });
+                })
+                .catch((err) => {
+                  res.render(configVariable.homePage, {
+                    title: env.appTitle,
+                    logo: env.logo_app,
+                    company_name: env.company_name,
+                    messages: lang.userNotLucky,
+                  });
                 });
               });
+            });
           } else {
             //  console.log("Login not OK");
             res.render(configVariable.homePage, {
