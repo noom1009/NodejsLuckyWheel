@@ -29,19 +29,15 @@ exports.registerController = async (req, res, next) => {
 };
 
 exports.authController = async (req, res, next) => {
-  //console.log(req.body);
   if (req.body.f_password == "" && req.body.f_email == "") {
-    //  console.log(req.body);
     res.redirect("/");
   } else {
-    // console.log(req.body);
     if (req.body.f_email !== "" && req.body.f_password !== "") {
       try {
         let payload = {
           email: req.body.f_email,
           password: req.body.f_password,
         };
-        // console.log(payload);
         axios.post(env.restfulAPI + "/api/users", payload).then((response) => {
           if (response.data.messagesboxs == "Success") {
             req.session.f_acc_code = response.data.result.f_acc_code;
@@ -98,7 +94,6 @@ exports.authController = async (req, res, next) => {
               });
             });
           } else {
-            //  console.log("Login not OK");
             res.render(configVariable.homePage, {
               title: env.appTitle,
               logo: env.logo_app,

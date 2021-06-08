@@ -124,7 +124,6 @@ class IcopengModel {
         console.log(err);
       });
   }
-
   static findByCardID({f_cardid=""}){
     return IcopenhDB.findAll({
         where: { f_cardid: f_cardid },
@@ -140,7 +139,6 @@ class IcopengModel {
           });
         });
   }
-
   static findAndCount(){
     return IcopenhDB.count()
     .then((result) => {
@@ -155,7 +153,6 @@ class IcopengModel {
       });
     });
   }
-
 }
 
 module.exports = IcopengModel;
