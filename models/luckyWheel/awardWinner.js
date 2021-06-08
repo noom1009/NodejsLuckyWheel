@@ -42,7 +42,7 @@ class awardWinnerModel {
         return result;
       })
       .catch((err) => {
-        // log.logger("warring", "505" +  err.message || lang.readeDataError);
+        log.logger("warring", "505" +  err.message || lang.readeDataError);
         console.log(err);
       });
   }
