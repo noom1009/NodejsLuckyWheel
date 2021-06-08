@@ -34,7 +34,6 @@ class awardWinnerModel {
     this.f_running = f_running;
     this.f_date = f_date;
   }
-
   static findAll() {
     return awardWinnerDB
       .findAll()
@@ -47,7 +46,6 @@ class awardWinnerModel {
         console.log(err);
       });
   }
-
   static findIDCard({ f_cardid = "" }) {
     console.log('test :' + f_cardid)
     return awardWinnerDB.findAll({
@@ -61,6 +59,20 @@ class awardWinnerModel {
         log.logger("warring", "505" + err.message || lang.readeDataError);
         console.log(err);
       });
+  }
+  static findAndCount(){
+    return awardWinnerDB.count()
+    .then((result) => {
+      //console.log(result)
+      return result;
+    })
+    .catch((err) => {
+      log.logger("warring", "505" +  err.message || lang.readeDataError);
+      console.log(err);
+      res.json({
+        message: err.message || lang.readeDataError
+      });
+    });
   }
 }
 

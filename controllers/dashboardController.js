@@ -31,24 +31,36 @@ exports.getLuckyWheelController = async (req, res, next) => {
       .then((results) => {
         icoModel.findAll()
         .then((result) => {
-          res.render(configVariable.dashboardPage, {
-            title: env.appTitle,
-            titles: lang.Tilte,
-            logo: env.logo_app,
-            company_name: env.company_name,
-            messages: lang.messagesboxs,
-            luckyData: results,
-            luckyData1: result,
-            data: {
-              name:  req.session.f_name,
-              lastname: req.session.f_lastname,
-              f_company:  req.session.f_company ,
-              f_department: req.session.f_department,
-              f_position: req.session.f_position,
-              f_accounttype: req.session.f_accounttype,
-              f_company: req.session.f_company,
-            },
-          });
+          icoModel.findAndCount().then((resultCustomer) => {
+            const countCustomer = resultCustomer;
+            luckyModel.findAndCount().then((resultLucky) => {
+              const countLucky = resultLucky;
+              luckyModel
+              .findAll()
+              .then((results) => {
+                res.render(configVariable.dashboardPage, {
+                  title: env.appTitle,
+                  titles: lang.Tilte,
+                  logo: env.logo_app,
+                  company_name: env.company_name,
+                  messages: lang.messagesboxs,
+                  luckyData: results,
+                  luckyData1: result,
+                  countCustomer: countCustomer,
+                  countLucky: countLucky,
+                  data: {
+                    name:  req.session.f_name,
+                    lastname: req.session.f_lastname,
+                    f_company:  req.session.f_company ,
+                    f_department: req.session.f_department,
+                    f_position: req.session.f_position,
+                    f_accounttype: req.session.f_accounttype,
+                    f_company: req.session.f_company,
+                  },
+                });
+              })
+            })
+          })
         })
       })
       .catch((err) => {
@@ -61,4 +73,5 @@ exports.getLuckyWheelController = async (req, res, next) => {
       });
   }
 };
+
 exports.dashboardController = (req, res, next) => {};
