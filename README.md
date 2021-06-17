@@ -9,3 +9,5 @@ npm i --save axios admin-lte bcrypt body-parser cors express express-session hel
 
 npm install --save-dev jest 
 ```
+# Screen design
+![Image](https://github.com/noom1009/NodejsLuckyWheel/blob/main/Screen%20Shot%202564-06-17%20at%2010.09.13.png?raw=true)
